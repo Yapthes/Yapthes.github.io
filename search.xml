@@ -4,5 +4,11 @@
     <title><![CDATA[Hello world]]></title>
     <url>%2F2019%2F07%2F13%2FHello-world-I%2F</url>
     <content type="text"><![CDATA[Hi this is my first Blog!]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记.</tag>
+      </tags>
   </entry>
 </search>
