@@ -445,7 +445,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 900px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -457,7 +457,7 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 900px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -474,7 +474,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 900px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -1836,7 +1836,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cbbab0;
+  background: #9a52c8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2612,7 +2612,7 @@ pre .javascript .function {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2630,7 +2630,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2672,7 +2672,7 @@ pre .javascript .function {
   }
 }
 .container .main-inner {
-  width: 960px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2688,8 +2688,8 @@ pre .javascript .function {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 700px;
-  background: #fff;
+  width: calc(100% - 260px);
+  background: rgba(255,255,255,0.8);
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
@@ -2714,7 +2714,7 @@ pre .javascript .function {
   float: left;
   margin-top: 300px;
   width: 240px;
-  background: #f5f7f9;
+  background: rgba(255,255,255,0.8);
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2731,7 +2731,6 @@ pre .javascript .function {
   display: none;
 }
 .footer-inner {
-  width: 960px;
   padding-left: 260px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2871,7 +2870,7 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 240px;
   color: #555;
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   box-shadow: initial;
   border-radius: initial;
   opacity: 0;
@@ -2999,8 +2998,17 @@ pre .javascript .function {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.post-body {
+  background: transparent;
+}
 @media (max-width: 767px) {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background: url("http://img.netbian.com/file/2018/0404/8cebca159db43f43f087c7e926c9eeda.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
