@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Servlet]]></title>
-    <url>%2F2019%2F07%2F14%2FServlet%2F</url>
-    <content type="text"><![CDATA[Servlet:server applet *概念:运行在服务器端的小程序. Servlet就是一个接口,定义了Java类被浏览器访问到(tomcat识别)的规则. 实现Servlet接口,复写方法. 快速入门: 创建JavaEE项目 定义一个类,实现Servlet接口,实现接口中的方法,配置Servlet]]></content>
+    <title><![CDATA[Servlet工作原理]]></title>
+    <url>%2F2019%2F07%2F14%2Fervlet%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[Servlet接口定义了Servlet与servlet容器之间的契约。这个契约是：Servlet容器将Servlet类载入内存，并产生Servlet实例和调用它具体的方法。但是要注意的是，在一个应用程序中，每种Servlet类型只能有一个实例。 public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException { System.out.println(&quot;hello.servlet&quot;); } 当用户通过浏览器,输入url访问servlet容器时,即服务器,servlet容器也可以认为是Tomcat(个人理解),Tomcat/servlet容器,会自动实例化一个servlet对象,不需要程序员去创建对象,并且调用servlet中的该方法,注意此方法中需要两个形参.一个Request对象,一个Response对象. 于是我特意去搜了一下这两个对象,发现,服务器在接收到请求的时候,并不是只会自动生成servlet对象,还会生成一个Request对象,在这个对象中,包含了此次请求的数据信息,服务器在检索对应的servlet的时候,会将储存了此次请求信息的Request对象作为实际参数传给服务器的该方法,还有doGet方法和doPost方法. 即可以理解为,Request这个人去找要找的东西(包含的数据信息),服务器检索这些东西的时候,发现某个东西(该Request需要的东西),但是这个东西需要人来拿(即Request对象作为参数)于是服务器把这个Request对象作为实参传给了这个东西(方法)接下来,是Response对象. 服务器在处理完对应的servlet中的方法时,处理完请求数据后,会调用Response对象,把包含此次处理完对应的响应数据调用Response中的方法,响应给客户. Response对象的方法： response.setHeader(String key, String value);//在响应头中添加响应信息,但是同键会被覆盖 response.addHeader(String key, String value);//在响应头中添加响应信息,同键不会被覆盖 response.setContentType(“text/html;charset=utf-8”);//设置响应编码格式 response.sendError(int num, String msg&quot;);//自定义响应状态码 response.getWriter().write(String str);//响应具体的数据给客户端 说到这里,大家应该知道,服务器是怎么调用service方法的了吧.那么,服务器又是怎么知道用户访问的资源是哪一个的呢… 在服务器收到请求的时候,会通过web项目中,web.xml中配置的信息,来配对,]]></content>
       <categories>
-        <category>Servlet</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
         <tag>Servlet</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[将Tomcat集成到IDEA中]]></title>
-    <url>%2F2019%2F07%2F14%2F%E5%B0%86Tomcat%E9%9B%86%E6%88%90%E5%88%B0Idea%E4%B8%AD%2F</url>
-    <content type="text"><![CDATA[打开IDEA. 1.首先,点击Run 然后找到Edit Configurations, 点击,在Templates中找到Tomcat Server,点击Local,然后然后点击OK,接下来,怎么知道自己是否部署服务器成功了呢,我们去创建一个web工程,点击File,New,Project然后点击Next,Finish.进入到工程中,在这里选择部署的服务器,,然后点击运行.然后运行index.jsp OK大功告成!]]></content>
+    <title><![CDATA[Servlet]]></title>
+    <url>%2F2019%2F07%2F14%2FServlet%2F</url>
+    <content type="text"><![CDATA[Servlet:server applet *概念:运行在服务器端的小程序. Servlet就是一个接口,定义了Java类被浏览器访问到(tomcat识别)的规则. 实现Servlet接口,复写方法. 狭义的讲servlet是一个待实现的接口,广义的讲servlet是任何一个实现了servlet这个接口的实现类.一般理解为后者. 快速入门: 创建JavaEE项目 定义一个类,实现Servlet接口,实现接口中的方法,配置Servlet,浏览器需要一个url来访问这个servlet,所以我们需要去配置一个url. 在web.xml中,配置,首先写一个 &lt;servlet&gt; &lt;servlet-name&gt;servlet名字&lt;/servlet-name&gt; &lt;servlet-class&gt;全类名&lt;/servlet-class&gt; &lt;/servlet&gt; 接下来写 &lt;servlet-mapping&gt; &lt;servlet-name&gt;servlet名字&lt;/servlet-name&gt; &lt;url-patten&gt;&lt;/url-patten&gt; &lt;/servlet-mapping&gt; Servlet的执行原理 客户端通过url中的localhost:8080(ip地址:8080端口)找到服务器,然后找到/后面的项目名称,接下来找到最后/的资源. 此时服务器会通过客户端发送过来的请求,去web.xml中,通过url-patten找是否有这一个资源,发现有则发现servlet-name(资源对应的servlet名字),然后通过&lt;servlet&gt;标签中的&lt;servlet-name&gt;找到对应的&lt;servlet-class&gt;,于是Tomcat通过反射把类的字节码文件加载进内存中class.forName(); 创建对象.class.newInstance(); 调用方法---service方法. 1.如果service()方法没有访问Servlet的成员变量也没有访问全局的资源比如静态变量、文件、数据库连接等，而是只使用了当前线程自己的资源，比如非指向全局资源的临时变量、request和response对象等。该方法本身就是线程安全的，不必进行任何的同步控制。 2. 如果service()方法访问了Servlet的成员变量，但是对该变量的操作是只读操作，该方法本身就是线程安全的，不必进行任何的同步控制。 3. 如果service()方法访问了Servlet的成员变量，并且对该变量的操作既有读又有写，通常需要加上同步控制语句。 4. 如果service()方法访问了全局的静态变量，如果同一时刻系统中也可能有其它线程访问该静态变量，如果既有读也有写的操作，通常需要加上同步控制语句。 5. 如果service()方法访问了全局的资源，比如文件、数据库连接等，通常需要加上同步控制语句。]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
       <tags>
-        <tag>Tomcat</tag>
+        <tag>Servlet</tag>
       </tags>
   </entry>
   <entry>
@@ -24,7 +27,7 @@
     <url>%2F2019%2F07%2F14%2FWeb%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BD%AF%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[*服务器:安装了服务器软件的计算机. *服务器软件:接收用户请求,处理请求,做出响应. *web服务器:在web服务器中,可以部署web项目,让用户可以通过浏览器来访问. 常见的web服务器软件: webLogic:orcle公司,大型的JavaEE服务器,支持所有的JavaEE规范,收费. webSphere:IBM公司,大型的JavaEE服务器,支持所有的JavaEE规范,收费. JBOSS:JBOSS公司,大型的JavaEE服务器,支持所有JavaEE规范,收费. Tomcat:Apache基金组织,中小型的JavaEE服务器,支持少量JavaEE规范(servlet/jsp)开源,免费. 使用Tomcat服务器. 1:下载Tomcat: 2:安装Tomcat:解压下载下来的压缩包即可. 3:卸载:解压目录即可. 4:Tomcat目录结构: bin:可执行文件. conf:Tomcat的配置文件. lib:依赖jar包. logs:日志文件. temp:临时文件. webapps:存放web项目. work:存放运行时数据. 5: 启动Tomcat: *bin目录下有一个可执行文件startup.bat双击即可启动.(不要关闭控制台). 通过启动以后在浏览器输入localhost:8080即可访问. 配置. 1.直接将项目放到webapps下 *简化部署:将项目打包格式为war,将war包放在webapps目录下,会自动解压缩. 2.通过Tomcat配置文件server.xml在&lt;Host&gt;标签体中配置&lt;Context docBase=&quot;项目存放路径&quot; path=&quot;虚拟路径&quot;/&gt;.通过server.xml配置,不安全,需要重启Tomcat服务器. 3.在conf目录下有一个catalina文件,中有一个locahost,创建任意名称的xml配置文件,在文件中编写,&lt;Context docBase=&quot;项目存放路径&quot; /&gt;虚拟目录为,xml的名称.通过热部署,不需要重启Tomcat服务器,安全. *项目分为静态项目/动态项目: 目录结构 Java动态工程的目录结构: --项目的目录: --WEB--INF目录: --web.xml:web项目的核心配置文件. --classes目录:存放字节码文件的目录. --lib目录:放置依赖的jar包.]]></content>
       <categories>
-        <category>Web</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
         <tag>Tomcat</tag>
@@ -36,7 +39,7 @@
     <url>%2F2019%2F07%2F14%2FWeb%2F</url>
     <content type="text"><![CDATA[1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端 2.B/S:浏览器(包含静态资源解析引擎)/服务器端 资源分类 1.静态资源 静态资源可以直接被浏览器解析. 如html,css,JavaScript 2.动态资源 动态资源被访问,先转换为静态资源.再返回给浏览器(这个动作被称为响应.),然后被解析. 如jsp,php,asp/servlet... 网络通信的三要素 1.IP:电子设备(计算机)在网络中的唯一标识. 2.端口:应用程序在计算机中的唯一标识.端口号的范围在,0~65536. 3.传输协议: tcp:经过三次握手,相对安全. udp:不需要握手,但是不安全.]]></content>
       <categories>
-        <category>Web</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
         <tag>Servlet</tag>
