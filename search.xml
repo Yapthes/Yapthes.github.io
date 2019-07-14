@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Web]]></title>
+    <url>%2F2019%2F07%2F14%2FWeb%2F</url>
+    <content type="text"><![CDATA[1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端 2.B/S:浏览器(包含静态资源解析引擎)/服务器端资源分类 1.静态资源 静态资源可以直接被浏览器解析. 如html,css,JavaScript 2.动态资源 动态资源被访问,先转换为静态资源.再返回给浏览器(这个动作被称为响应.),然后被解析. 如jsp,php,asp/servlet... 网络通信的三要素 1.IP:电子设备(计算机)在网络中的唯一标识. 2.端口:应用程序在计算机中的唯一标识.端口号的范围在,0~65536. 3.传输协议: tcp:经过三次握手,相对安全. udp:不需要握手,但是不安全.]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Servlet</tag>
+        <tag>Tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello world]]></title>
     <url>%2F2019%2F07%2F13%2FHello-world-I%2F</url>
     <content type="text"><![CDATA[Hi this is my first Blog!]]></content>
