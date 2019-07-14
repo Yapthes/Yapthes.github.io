@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端  2.B/S:浏览器(包含静态资源解析引擎)/服务器端资源分类 1.静态资源     静态资源可以直接被浏览器解析.     如html,css,JavaScript 2.动态资源     动态资源被访问,先转换为静态资源.再返回给浏览器(这个动作被称为响应.),然后被解析.">
+<meta name="description" content="1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端  2.B/S:浏览器(包含静态资源解析引擎)/服务器端">
 <meta name="keywords" content="Servlet,Tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web">
 <meta property="og:url" content="http://yoursite.com/2019/07/14/Web/index.html">
 <meta property="og:site_name" content="My_Blog">
-<meta property="og:description" content="1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端  2.B/S:浏览器(包含静态资源解析引擎)/服务器端资源分类 1.静态资源     静态资源可以直接被浏览器解析.     如html,css,JavaScript 2.动态资源     动态资源被访问,先转换为静态资源.再返回给浏览器(这个动作被称为响应.),然后被解析.">
+<meta property="og:description" content="1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端  2.B/S:浏览器(包含静态资源解析引擎)/服务器端">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T01:47:44.311Z">
+<meta property="og:updated_time" content="2019-07-14T02:41:02.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web">
-<meta name="twitter:description" content="1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端  2.B/S:浏览器(包含静态资源解析引擎)/服务器端资源分类 1.静态资源     静态资源可以直接被浏览器解析.     如html,css,JavaScript 2.动态资源     动态资源被访问,先转换为静态资源.再返回给浏览器(这个动作被称为响应.),然后被解析.">
+<meta name="twitter:description" content="1.web相关概念回顾2.web服务器软件: Tomcat3.Servlet学习 软件架构 1.C/S:客户端/服务器端  2.B/S:浏览器(包含静态资源解析引擎)/服务器端">
 
 
 
@@ -100,7 +100,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -419,7 +419,8 @@
 <p>软件架构</p>
 <pre><code>1.C/S:客户端/服务器端
 
-2.B/S:浏览器(包含静态资源解析引擎)/服务器端</code></pre><p>资源分类</p>
+2.B/S:浏览器(包含静态资源解析引擎)/服务器端</code></pre><a id="more"></a>   
+<p>资源分类</p>
 <pre><code>1.静态资源
     静态资源可以直接被浏览器解析.
     如html,css,JavaScript
@@ -473,6 +474,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/14/Web服务器软件/" rel="prev" title="Web服务器软件">
+                Web服务器软件 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -542,7 +547,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -553,7 +558,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -564,7 +569,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -610,7 +615,7 @@
           
           
 
-          
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=2883274768&auto=1&height=430"></iframe>
 
         </div>
       </section>
@@ -654,7 +659,6 @@
 
 
 
-
         
 
 
@@ -670,6 +674,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -1150,5 +1156,5 @@
 
   <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":250,"height":400},"mobile":{"show":true},"log":false});</script></body>
 </html>
