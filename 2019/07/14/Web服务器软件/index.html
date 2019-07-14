@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="My_Blog">
 <meta property="og:description" content="*服务器:安装了服务器软件的计算机. *服务器软件:接收用户请求,处理请求,做出响应. *web服务器:在web服务器中,可以部署web项目,让用户可以通过浏览器来访问. 常见的web服务器软件:     webLogic:orcle公司,大型的JavaEE服务器,支持所有的JavaEE规范,收费.     webSphere:IBM公司,大型的JavaEE服务器,支持所有的JavaEE规范,收费">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T04:53:29.056Z">
+<meta property="og:updated_time" content="2019-07-14T06:07:23.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web服务器软件">
 <meta name="twitter:description" content="*服务器:安装了服务器软件的计算机. *服务器软件:接收用户请求,处理请求,做出响应. *web服务器:在web服务器中,可以部署web项目,让用户可以通过浏览器来访问. 常见的web服务器软件:     webLogic:orcle公司,大型的JavaEE服务器,支持所有的JavaEE规范,收费.     webSphere:IBM公司,大型的JavaEE服务器,支持所有的JavaEE规范,收费">
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
                   </a>
                 </span>
 
@@ -424,7 +424,7 @@
     JBOSS:JBOSS公司,大型的JavaEE服务器,支持所有JavaEE规范,收费.
     Tomcat:Apache基金组织,中小型的JavaEE服务器,支持少量JavaEE规范(servlet/jsp)开源,免费.</code></pre><a id="more"></a>            
 
-<p> 在这里使用Tomcat服务器.</p>
+<p>使用Tomcat服务器.</p>
 <pre><code>1:下载Tomcat:
 2:安装Tomcat:解压下载下来的压缩包即可.
 3:卸载:解压目录即可.
@@ -439,6 +439,20 @@
  5: 启动Tomcat:
      *bin目录下有一个可执行文件startup.bat双击即可启动.(不要关闭控制台).
      通过启动以后在浏览器输入localhost:8080即可访问.</code></pre><!--more-->
+<p>配置.</p>
+<pre><code>1.直接将项目放到webapps下
+*简化部署:将项目打包格式为war,将war包放在webapps目录下,会自动解压缩.
+2.通过Tomcat配置文件server.xml在&lt;Host&gt;标签体中配置&lt;Context docBase=&quot;项目存放路径&quot; path=&quot;虚拟路径&quot;/&gt;.通过server.xml配置,不安全,需要重启Tomcat服务器.
+3.在conf目录下有一个catalina文件,中有一个locahost,创建任意名称的xml配置文件,在文件中编写,&lt;Context docBase=&quot;项目存放路径&quot; /&gt;虚拟目录为,xml的名称.通过热部署,不需要重启Tomcat服务器,安全.
+
+*项目分为静态项目/动态项目:
+    目录结构
+        Java动态工程的目录结构:
+            --项目的目录:
+                --WEB--INF目录:
+                 --web.xml:web项目的核心配置文件.
+                 --classes目录:存放字节码文件的目录.
+                 --lib目录:放置依赖的jar包.</code></pre>
       
     </div>
     
@@ -479,6 +493,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/14/将Tomcat集成到Idea中/" rel="prev" title="将Tomcat集成到IDEA中">
+                将Tomcat集成到IDEA中 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -548,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
