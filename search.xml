@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Servlet体系结构]]></title>
+    <url>%2F2019%2F07%2F15%2Fervlet-HTTP-Request%2F</url>
+    <content type="text"><![CDATA[Servlet 本身是一个接口,里面包含了init,servi,destroy,getservletinfo,getservletconfig等方法,程序员需要去定义一个类,用来实现这个接口,重写里面的方法,来实现客户端的访问请求 原理:客户端发送url请求,服务器(Tomcat)接收请求以后,实例化Servlet对象(与此同时,会产生一个包含请求数据信息的Request对象),通过配置信息web.xml或者JDK6以上可以使用注解配置servlet中的url-patten,来寻找对应的serlvet,找到对应的servlet后,通过反射找到对应的实现类,然后去执行类中的service方法(Requset,Response),此时会产生Response对象,将处理过后包含请求的数据信息,响应给客户. GenericServlet 实现了Servlet接口的一个抽象类,里面重写了Servlet中的方法.其中,除了service(Requset,Response)方法是抽象方法外,其余的方法都是public,该类主要目的是为了减少代码,避免代码冗余,一开始程序员需要实现Servlet接口,必须重写其中的方法,但是借助中间类GenericServlet,该类实现了Servlet接口,重写了其中的方法,程序员只用继承该类,实现其中的service方法即可,这样一来,更方便,减少代码量,增加工作效率,用到那个方法,便去重写那个方法. HttpServlet 该抽象类,继承了GenericServlet这个类,其中有两个service方法.一个protect的service方 法,其中,两个方法需要的参数对象不同,但在public的service方法中,进行了向下转型,因为HttpServlet继承自GenericServlet,而GenericServlet又实现了Servlet接口,所以Servlet也是 HttpServlet的爷爷类,public方法中,把Servlet的Requst和Response对象,通过向下转型,强 转为HttpServlet的Requset和Response对象,然后再该方法中,调用本类中的protect的 service方法, 如下方法. 该方法中,封装了对请求信息的判断,判断其是get/post请求,然后根据判断结果.执行对应的doget和dopost方法,这样就不用再每一次都进行判断,而程序员只用写一个类,继承自HttpServlet,然后去重写其中的doget或者dopost方法,当服务器收到每次请求的时候,会自动去找父类GenericServlet中的public service方法,然后通过强转,执行protect service方法,然后通过方法中的判断去执行doget或者dopost方法,又因为程序员写的类继承了该类,重写了doget或者dopost方法,所以其实执行的是子类中的doget或dopost方法,这样就完成了想返回的响应请求和实现请求响应的过程… 特别注意!!! 当继承HttpServlet的子类中,如果重写了service方法,得看方法得参数,如果为ServletRequest和ServletResponse,那么服务器再收到请求以后,便不会去父类中,执行父类中的强转得service方法,而是直接执行子类中重写的该方法,然后执行该子类中service中对应得操作… 那么如果子类中,重写了参数为HttpRequest和Httpresponse得service方法,那么服务器在接收到请求以后,会先去父类中执行向下转型得service方法,然后再到子类中,执行该方法,接着执行该方法中对应得操作.]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>Servlet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Servlet工作原理]]></title>
     <url>%2F2019%2F07%2F14%2Fervlet%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%2F</url>
     <content type="text"><![CDATA[Servlet接口定义了Servlet与servlet容器之间的契约。这个契约是：Servlet容器将Servlet类载入内存，并产生Servlet实例和调用它具体的方法。但是要注意的是，在一个应用程序中，每种Servlet类型只能有一个实例。 public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException { System.out.println(&quot;hello.servlet&quot;); } 当用户通过浏览器,输入url访问servlet容器时,即服务器,servlet容器也可以认为是Tomcat(个人理解),Tomcat/servlet容器,会自动实例化一个servlet对象,不需要程序员去创建对象,并且调用servlet中的该方法,注意此方法中需要两个形参.一个Request对象,一个Response对象. 于是我特意去搜了一下这两个对象,发现,服务器在接收到请求的时候,并不是只会自动生成servlet对象,还会生成一个Request对象,在这个对象中,包含了此次请求的数据信息,服务器在检索对应的servlet的时候,会将储存了此次请求信息的Request对象作为实际参数传给服务器的该方法,还有doGet方法和doPost方法. 即可以理解为,Request这个人去找要找的东西(包含的数据信息),服务器检索这些东西的时候,发现某个东西(该Request需要的东西),但是这个东西需要人来拿(即Request对象作为参数)于是服务器把这个Request对象作为实参传给了这个东西(方法)接下来,是Response对象. 服务器在处理完对应的servlet中的方法时,处理完请求数据后,会调用Response对象,把包含此次处理完对应的响应数据调用Response中的方法,响应给客户. Response对象的方法： response.setHeader(String key, String value);//在响应头中添加响应信息,但是同键会被覆盖 response.addHeader(String key, String value);//在响应头中添加响应信息,同键不会被覆盖 response.setContentType(“text/html;charset=utf-8”);//设置响应编码格式 response.sendError(int num, String msg&quot;);//自定义响应状态码 response.getWriter().write(String str);//响应具体的数据给客户端 说到这里,大家应该知道,服务器是怎么调用service方法的了吧.那么,服务器又是怎么知道用户访问的资源是哪一个的呢… 在服务器收到请求的时候,会通过web项目中,web.xml中配置的信息,来配对,]]></content>
