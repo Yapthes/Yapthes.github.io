@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Servlet,">
 
 
 
@@ -77,17 +77,22 @@
 
 
 
-<meta name="description" content="Servlet Jsp Html Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="最近在网上读到文章,理论上Servlet可以处理多种方式得请求和响应,http只是其中之一,那么,说明HttpServlet中的请求和响应,也是Servlet得其中之一,说明HttpServletrequest,和HttpServletresponse,是Servlet中得request和response得子类. 当然,继承父类,有父类得属性,之所以继承,肯定子类得有自己特有的东西,HttpSer">
+<meta name="keywords" content="Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/ervlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别/index.html">
 <meta property="og:site_name" content="My_Blog">
-<meta property="og:description" content="Servlet Jsp Html Java">
+<meta property="og:description" content="最近在网上读到文章,理论上Servlet可以处理多种方式得请求和响应,http只是其中之一,那么,说明HttpServlet中的请求和响应,也是Servlet得其中之一,说明HttpServletrequest,和HttpServletresponse,是Servlet中得request和response得子类. 当然,继承父类,有父类得属性,之所以继承,肯定子类得有自己特有的东西,HttpSer">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T02:43:59.692Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-11.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-14.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-15.png">
+<meta property="og:updated_time" content="2019-07-17T14:19:14.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="Servlet Jsp Html Java">
+<meta name="twitter:title" content="Servlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别">
+<meta name="twitter:description" content="最近在网上读到文章,理论上Servlet可以处理多种方式得请求和响应,http只是其中之一,那么,说明HttpServlet中的请求和响应,也是Servlet得其中之一,说明HttpServletrequest,和HttpServletresponse,是Servlet中得request和response得子类. 当然,继承父类,有父类得属性,之所以继承,肯定子类得有自己特有的东西,HttpSer">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-11.png">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/ervlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别/">
 
 
 
 
 
-  <title>Tags | My_Blog</title>
+  <title>Servlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别 | My_Blog</title>
   
 
 
@@ -280,40 +285,281 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/ervlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="昊昊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My_Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">Tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                4 tags in total
+          <h1 class="post-title" itemprop="name headline">Servlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-17T13:03:00+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaEE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaEE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Servlet/" style="font-size: 30px; color: #111">Servlet</a> <a href="/tags/Tomcat/" style="font-size: 21px; color: #6f6f6f">Tomcat</a> <a href="/tags/Web/" style="font-size: 12px; color: #ccc">Web</a> <a href="/tags/笔记/" style="font-size: 12px; color: #ccc">笔记.</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>最近在网上读到文章,理论上Servlet可以处理多种方式得请求和响应,http只是其中之一,那么,说明HttpServlet中的请求和响应,也是Servlet得其中之一,说明HttpServletrequest,和HttpServletresponse,是Servlet中得request和response得子类.</p>
+<p>当然,继承父类,有父类得属性,之所以继承,肯定子类得有自己特有的东西,HttpServlet中,多了针对Http协议多种消息处理方法,例如,getHeader(),getSession()、getMethod()等等..</p>
+<p>Servlet框架,这个框架是由java.servlet和javax.servlet.http,这两个包,组成得,再java.servlet中,规定了一个servlet类必须扩展和实现得通用接口和类.当以后别人问到你,一个servlet需要做什么,你就应该这么说.实现java.servlet包下得servlet接口并重写里面的方法,具体servlet接口分了子类,继承或者实现,取决于选择.<a id="more"></a></p>
+<p>Servlet的框架的核心是javax.servlet.Servlet接口,所有的Servlet都必须实现这一接口.在Servlet接口中定义了5个方法,其中有3个方法代表了Servlet的生命周期:</p>
+<pre><code>init方法,在服务器开始的时候,初始化servlet对象,servlet对象是单例多线程得.
+service方法,负责响应客户的请求.
+destroy方法,结束servlet生命周期得方法.</code></pre><p>Servlet中重要的对象</p>
+<pre><code>ServletConfig:
+
+    获取途径:getServletConfig():该对象包含的方法有这几个...</code></pre><p><img src="/images/pasted-11.png" alt></p>
+<pre><code>getServletName():返回一个字符串,用来获取该Servlet配置信息中得ServletName的,也就是web.xml配置的那个名字..
+getInitParameter(String var1):获取在servlet中初始化参数的值。这里注意与全局初始化参数的区分。这个获取的只是在该servlet下的初始化参数..
+getInitParameterNames():获取在Servlet中所有初始化参数的名字，也就是key值，可以通过key值，来找到各个初始化参数的value值。注意返回的是枚举类型..
+该方法返回的类型可以当作是一个迭代器,使用该类型对象方法来获取里面的值..
+getServletContext():tomcat为每个web项目都创建一个ServletContext实例，tomcat在启动时创建，服务器关闭时销毁，在一个web项目中共享数据，管理web项目资源，为整个web配置公共信息等，通俗点讲，就是一个web项目，就存在一个ServletContext实例，每个Servlet都可以访问到它。</code></pre><p> 然后来说说Servlet的单例模式,一个Servlet只能被实例化一次,但是是多线程的,单例多线程,每个servlet类只能实例化自己一次,在服务器启动的时候,但是该实例化的对象会开启多个线程去使用,单例的好处,减少了GC的负担,但是需要注意数据共享的安全.</p>
+<pre><code>同步代码块:这样可以解决数据共享的问题,但是,同一时刻只能允许一个客户进行操作访问服务器,其余的需要排队等待,显然这是不可行的.
+那么,如果再代码块中,避开实例变量,定义线程方法中的局部变量,这样互不影响,也就避免了数据共享的问题.推荐使用,用户也不用排队等待.</code></pre><p>Request对象/Response对象:</p>
+<pre><code>1.request原理:tomcat会通过请求url中的资源路径,去创建对应的Servlet的对象.
+2.tomcat会创建两个对象,request对象中,封装请求数据消息.
+3.tomcat将request和response对象传递给service方法,并且调用该方法.
+4.程序员可以通过request对象,来获取请求消息数,可以通过设置response对象来设置响应消息.
+5.从response中获取响应消息,返回给客户.
+
+request对象继承体系结构：    
+    ServletRequest        --    接口
+        |    继承
+    HttpServletRequest    -- 接口
+        |    实现
+    org.apache.catalina.connector.RequestFacade 类(tomcat).
+
+    * 方法：
+                1. 获取请求方式 ：GET
+                    * String getMethod()  
+                2. (★)获取虚拟目录：/day14
+                    * String getContextPath()
+                3. 获取Servlet路径: /demo1
+                    * String getServletPath()
+                4. 获取get方式请求参数：name=zhangsan
+                    * String getQueryString()
+                5. (★)获取请求URI：/day14/demo1
+                    * String getRequestURI():        /day14/demo1
+                    * StringBuffer getRequestURL()  :http://localhost/day14/demo1
+
+                    * URL:统一资源定位符 ： http://localhost/day14/demo1    中华人民共和国
+                    * URI：统一资源标识符 : /day14/demo1                    共和国
+
+                6. 获取协议及版本：HTTP/1.1
+                    * String getProtocol()
+
+                7. 获取客户机的IP地址：
+                    * String getRemoteAddr()其父类的方法.
+
+                2.获取请求头数据
+                    *方法:
+                        (★)String getHeader(String name):通过请求头的名称获取请求头.
+                        Enumeration&lt;String&gt; getHeaderNames():获取所有请求头,返回的是枚举.可以理解为迭代器.
+
+                 3.获取请求体数据
+
+                     方法:
+                        获取字符流数据.BufferedReader getReader()
+                        获取字节流数据.ServletInputStreame getInputstream()
+                        再从流对象中拿数据.</code></pre><p><img src="/images/pasted-14.png" alt="upload successful"><br>其他功能:</p>
+<pre><code>获取请求参数
+    *String getParameter(String name):根据参数名称,获取参数值.
+    *String [] getParameterValues(String name):作用于复选框.
+    *Enumeration&lt;String&gt; getParameterNames():获取所有请求的参数名称.
+    *Map&lt;String,String[]&gt; getParameterMap():获取所有参数的Map集合.
+    使用方法如下:
+    如果出现乱码,在获取参数前,通过request.setCharacterEncoding(&quot;页面中的编码&quot;).</code></pre><p><img src="/images/pasted-15.png" alt="upload successful"></p>
+<pre><code>请求转发:一种在服务器内部的资源跳转方式.
+    步骤:
+    通过request.getRequestDispatcher(&quot;要跳转的servlet的路径&quot;).forward(req,reqs)
+    特点:
+    转发后的浏览器地址栏路径不会变化,再当前servlet的资源路径跳转.
+    因为是服务器内部转发,不能转发当前tomcat容器外的servlet.只能访问当前服务器内部的servlet
+    转发是一次请求,多个资源之间使用的是同一次请求.
+共享数据:
+    域对象.一个有作用范围的对象,可以在范围内共享数据.
+    request域,代表一次请求,一般用于请求转发的多个资源中共享数据.
+        方法
+            setAttribute(String name,Object obj):储存数据.
+            Object getAttribute(String name):通过键获取值.
+            void removeAttribute(String name):通过键移除键值对.
+获取ServletContext:
+    ServletContext getServletContext():获取ServletContext对象.</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/15/ervlet-HTTP-Request/" rel="next" title="Servlet体系结构">
+                <i class="fa fa-chevron-left"></i> Servlet体系结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
