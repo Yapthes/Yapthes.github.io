@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="笔记.,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -77,18 +77,17 @@
 
 
 
-<meta name="description" content="Hi this is my first Blog!">
-<meta name="keywords" content="笔记.">
+<meta name="description" content="响应消息: 格式:响应行,响应头,响应空行,响应体.      响应行:           协议/版本,状态码           状态码:服务器告诉客户端浏览器本次请求和响应的状态.                   *分类:                         第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello world">
-<meta property="og:url" content="http://yoursite.com/2019/07/13/Hello-world-I/index.html">
+<meta property="og:title" content="Response">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/Response/index.html">
 <meta property="og:site_name" content="My_Blog">
-<meta property="og:description" content="Hi this is my first Blog!">
+<meta property="og:description" content="响应消息: 格式:响应行,响应头,响应空行,响应体.      响应行:           协议/版本,状态码           状态码:服务器告诉客户端浏览器本次请求和响应的状态.                   *分类:                         第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-13T18:53:16.035Z">
+<meta property="og:updated_time" content="2019-07-18T09:03:00.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello world">
-<meta name="twitter:description" content="Hi this is my first Blog!">
+<meta name="twitter:title" content="Response">
+<meta name="twitter:description" content="响应消息: 格式:响应行,响应头,响应空行,响应体.      响应行:           协议/版本,状态码           状态码:服务器告诉客户端浏览器本次请求和响应的状态.                   *分类:                         第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.">
 
 
 
@@ -118,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/13/Hello-world-I/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/18/Response/">
 
 
 
 
 
-  <title>Hello world | My_Blog</title>
+  <title>Response | My_Blog</title>
   
 
 
@@ -293,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/13/Hello-world-I/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/18/Response/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="昊昊">
@@ -310,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello world</h1>
+          <h1 class="post-title" itemprop="name headline">Response</h1>
         
 
         <div class="post-meta">
@@ -322,8 +321,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-13T09:00:00+08:00">
-                2019-07-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-18T09:13:33+08:00">
+                2019-07-18
               </time>
             
 
@@ -332,28 +331,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -413,8 +390,40 @@
       
 
       
-        <p>Hi this is my first Blog!</p>
+        <p>响应消息:</p>
+<pre><code>格式:响应行,响应头,响应空行,响应体.
+     响应行:
+          协议/版本,状态码
+          状态码:服务器告诉客户端浏览器本次请求和响应的状态.
+                  *分类:
+                        第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.
+                        第二类:2xx,成功!
+                        第三类:3xx,重定向,302代表资源跳转,304,缓存.
+                        第四类:4xx,客户端错误.404代表请求路径没有对应的资源.,405代表请求方式没有对应的doxxx方法.
+                        第五类:5xx,服务器错误.500代表服务器内部出现异常.</code></pre><a id="more"></a>
 
+<pre><code>响应头:
+        格式:头名称 值
+             常见的响应头:
+                 Content-type:页面编码格式.
+                 Content-Length:字节数.
+                 Content-disposition:
+                 服务器告诉客户端以什么格式打开响应体.默认值in-line:在当前页面打开.
+                 attachment:以附件形式打开,文件下载.</code></pre><p> Response设置响应消息:</p>
+<pre><code>设置响应行:
+    设置状态码:setStatus(int i).
+设置响应头:
+    setHeader(String name,String values)/(&quot;location&quot;,&quot;资源路径&quot;).这是重定向方法.需要加虚拟路径.
+    还有一种方法,Response.sendRidrect(&quot;资源路径&quot;).需要加虚拟路径.
+    ★:重定向特点:两次请求,两次响应,不是内部跳转,而是服务器两次请求跳转.地址栏改变.
+    可以访问服务器外资源.
+    重定向不能使用request对象的共享数据.
+设置相应体:
+    通过流,首先要获取流,
+    获取输出流,
+    ★注意!解决乱码:response.setConentType(&quot;text/html;charset=utf-8&quot;);
+    第一种,字符流:Printer getWriter().不是实时打印.是一次响应完成后打印.
+    第二种,字节流:ServletOutputStream getOutputStream().</code></pre>
       
     </div>
     
@@ -429,12 +438,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/笔记/" rel="tag"># 笔记.</a>
-          
-        </div>
-      
 
       
       
@@ -444,15 +447,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/17/ervlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别/" rel="next" title="Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别">
+                <i class="fa fa-chevron-left"></i> Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/14/Web/" rel="prev" title="Web">
-                Web <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

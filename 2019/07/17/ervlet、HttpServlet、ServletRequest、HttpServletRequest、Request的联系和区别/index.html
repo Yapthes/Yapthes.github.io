@@ -88,7 +88,7 @@
 <meta property="og:image" content="http://yoursite.com/images/pasted-11.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-14.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-15.png">
-<meta property="og:updated_time" content="2019-07-17T14:26:06.832Z">
+<meta property="og:updated_time" content="2019-07-18T09:07:14.600Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet、HttpServlet、ServletRequest、HttpServletRequest&#x2F;Response的联系和区别">
 <meta name="twitter:description" content="最近在网上读到文章,理论上Servlet可以处理多种方式得请求和响应,http只是其中之一,那么,说明HttpServlet中的请求和响应,也是Servlet得其中之一,说明HttpServletrequest,和HttpServletresponse,是Servlet中得request和response得子类. 当然,继承父类,有父类得属性,之所以继承,肯定子类得有自己特有的东西,HttpSer">
@@ -424,14 +424,37 @@
 <pre><code>init方法,在服务器开始的时候,初始化servlet对象,servlet对象是单例多线程得.
 service方法,负责响应客户的请求.
 destroy方法,结束servlet生命周期得方法.</code></pre><p>Servlet中重要的对象</p>
-<pre><code>ServletConfig:
+<pre><code>★ServletConfig:
 
     获取途径:getServletConfig():该对象包含的方法有这几个...</code></pre><p><img src="/images/pasted-11.png" alt></p>
 <pre><code>getServletName():返回一个字符串,用来获取该Servlet配置信息中得ServletName的,也就是web.xml配置的那个名字..
 getInitParameter(String var1):获取在servlet中初始化参数的值。这里注意与全局初始化参数的区分。这个获取的只是在该servlet下的初始化参数..
 getInitParameterNames():获取在Servlet中所有初始化参数的名字，也就是key值，可以通过key值，来找到各个初始化参数的value值。注意返回的是枚举类型..
 该方法返回的类型可以当作是一个迭代器,使用该类型对象方法来获取里面的值..
-getServletContext():tomcat为每个web项目都创建一个ServletContext实例，tomcat在启动时创建，服务器关闭时销毁，在一个web项目中共享数据，管理web项目资源，为整个web配置公共信息等，通俗点讲，就是一个web项目，就存在一个ServletContext实例，每个Servlet都可以访问到它。</code></pre><p> 然后来说说Servlet的单例模式,一个Servlet只能被实例化一次,但是是多线程的,单例多线程,每个servlet类只能实例化自己一次,在服务器启动的时候,但是该实例化的对象会开启多个线程去使用,单例的好处,减少了GC的负担,但是需要注意数据共享的安全.</p>
+★getServletContext():tomcat为每个web项目都创建一个ServletContext实例，tomcat在启动时创建，服务器关闭时销毁，在一个web项目中共享数据，管理web项目资源，为整个web配置公共信息等，通俗点讲，就是一个web项目，就存在一个ServletContext实例，每个Servlet都可以访问到它。
+
+
+ 功能：    
+ 1. 获取MIME类型：        
+ * MIME类型:在互联网通信过程中定义的一种文件数据类型           
+ * 格式： 大类型/小类型   text/html       image/jpeg
+
+ * 获取：String getMimeType(String file)     
+ * 域对象：共享数据       
+  1. setAttribute(String name,Object value)    
+  2.getAttribute(String name)        
+  3. removeAttribute(String name)
+
+    * ServletContext对象范围：所有用户所有请求的数据    
+    3. 获取文件的真实(服务器)路径       
+    1. 方法：String getRealPath(String path) 本质是字符串拼接.
+    Context对象代表web工程的根目录,拼接参数中的资源路径.
+    String b = context.getRealPath(&quot;/b.txt&quot;);//web目录下资源访问             
+    System.out.println(b);                
+    String c = context.getRealPath(&quot;/WEB-INF/c.txt&quot;);//WEB-INF目录下的资源访问           
+    System.out.println(c);               
+    String a = context.getRealPath(&quot;/WEB-INF/classes/a.txt&quot;);//src目录下的资源访问           
+    System.out.println(a);</code></pre><p> 然后来说说Servlet的单例模式,一个Servlet只能被实例化一次,但是是多线程的,单例多线程,每个servlet类只能实例化自己一次,在服务器启动的时候,但是该实例化的对象会开启多个线程去使用,单例的好处,减少了GC的负担,但是需要注意数据共享的安全.</p>
 <pre><code>同步代码块:这样可以解决数据共享的问题,但是,同一时刻只能允许一个客户进行操作访问服务器,其余的需要排队等待,显然这是不可行的.
 那么,如果再代码块中,避开实例变量,定义线程方法中的局部变量,这样互不影响,也就避免了数据共享的问题.推荐使用,用户也不用排队等待.</code></pre><p>Request对象/Response对象:</p>
 <pre><code>1.request原理:tomcat会通过请求url中的资源路径,去创建对应的Servlet的对象.
@@ -492,7 +515,7 @@ request对象继承体系结构：
     通过request.getRequestDispatcher(&quot;要跳转的servlet的路径&quot;).forward(req,reqs)
     特点:
     转发后的浏览器地址栏路径不会变化,再当前servlet的资源路径跳转.
-    因为是服务器内部转发,不能转发当前tomcat容器外的servlet.只能访问当前服务器内部的servlet
+    因为是服务器内部转发,不能转发当前tomcat容器外的servlet.只能访问当前服务器内部的servlet,所以方法参数中的路径不用加上虚拟路径.
     转发是一次请求,多个资源之间使用的是同一次请求.
 共享数据:
     域对象.一个有作用范围的对象,可以在范围内共享数据.
@@ -541,6 +564,10 @@ request对象继承体系结构：
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/18/Response/" rel="prev" title="Response">
+                Response <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -615,7 +642,7 @@ request对象继承体系结构：
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
