@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Servlet,">
 
 
 
@@ -77,16 +77,20 @@
 
 
 
-<meta name="description" content="路漫漫其修远兮....">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My_Blog">
-<meta property="og:url" content="http://yoursite.com/tags/笔记/index.html">
+<meta name="description" content="概念:代表整个web工程,可以和服务器通信. 获取:request.getServletContext()/this.getServletContext(). 功能: 获取MIME类型: *MIME类型:在互联网通信过程中定义的一种文件数据类型. 格式: 大类型/小类型 如text/html image/jpeg 域对象,共享数据: *作用范围广,整个web工程. 获取文件的真实路径: *通过Co">
+<meta name="keywords" content="Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ServletContext对象笔记">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/ervletContext对象笔记/index.html">
 <meta property="og:site_name" content="My_Blog">
-<meta property="og:description" content="路漫漫其修远兮....">
+<meta property="og:description" content="概念:代表整个web工程,可以和服务器通信. 获取:request.getServletContext()/this.getServletContext(). 功能: 获取MIME类型: *MIME类型:在互联网通信过程中定义的一种文件数据类型. 格式: 大类型/小类型 如text/html image/jpeg 域对象,共享数据: *作用范围广,整个web工程. 获取文件的真实路径: *通过Co">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/pasted-21.png">
+<meta property="og:updated_time" content="2019-07-19T17:38:46.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My_Blog">
-<meta name="twitter:description" content="路漫漫其修远兮....">
+<meta name="twitter:title" content="ServletContext对象笔记">
+<meta name="twitter:description" content="概念:代表整个web工程,可以和服务器通信. 获取:request.getServletContext()/this.getServletContext(). 功能: 获取MIME类型: *MIME类型:在互联网通信过程中定义的一种文件数据类型. 格式: 大类型/小类型 如text/html image/jpeg 域对象,共享数据: *作用范围广,整个web工程. 获取文件的真实路径: *通过Co">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-21.png">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/笔记/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/ervletContext对象笔记/">
 
 
 
 
 
-  <title>Tag: 笔记. | My_Blog</title>
+  <title>ServletContext对象笔记 | My_Blog</title>
   
 
 
@@ -141,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,52 +281,214 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>笔记.<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/ervletContext对象笔记/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="昊昊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/07/13/Hello-world-I/" itemprop="url">
-              
-                <span itemprop="name">Hello world</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ServletContext对象笔记</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-13T09:00:00+08:00" content="2019-07-13">
-          07-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-19T22:58:00+08:00">
+                2019-07-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p>概念:代表整个web工程,可以和服务器通信.</p>
+<p>获取:request.getServletContext()/this.getServletContext().</p>
+<pre><code>功能:
+获取MIME类型:
+*MIME类型:在互联网通信过程中定义的一种文件数据类型.
+格式: 大类型/小类型 如text/html image/jpeg</code></pre><p><img src="/images/pasted-21.png" alt="upload successful"></p>
+<pre><code>域对象,共享数据:
+*作用范围广,整个web工程.
+获取文件的真实路径:
+*通过Context.getrealPath(String s)来获取文件真实路径,其中,参数代表web根目录下的资源路径,如果资源路径再某个文件夹下,则应在加上对应的(/文件夹名称/资源名称).
+★特别注意,资源路径如果在src下,因为src下的文件通过编译过后最后会在/WEB-INFO/classes下,所以在获取src下资源的真实路径时,应该写成(/WEB-INFO/classes/资源名称).
+Context.getrealPath(String s)本质上,是在做字符串的拼接,web根目录拼接上参数中的字符串.</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/19/记/" rel="next" title="Response对象笔记">
+                <i class="fa fa-chevron-left"></i> Response对象笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/20/现图片-视频文件下载/" rel="prev" title="实现图片,视频文件下载">
+                实现图片,视频文件下载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +496,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTMxNC8yMTgyNw=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -592,6 +767,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -620,6 +799,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

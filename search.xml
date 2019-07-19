@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[实现图片,视频文件下载]]></title>
+    <url>%2F2019%2F07%2F20%2F%E7%8E%B0%E5%9B%BE%E7%89%87-%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[其中,获取真是路径哪里,注意自己去web工程项目下面看,是否真的存放有资源路径下的文件.容易报错.出现系统访问路径不存在.]]></content>
+      <categories>
+        <category>undefined</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ServletContext对象笔记]]></title>
+    <url>%2F2019%2F07%2F19%2FervletContext%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[概念:代表整个web工程,可以和服务器通信. 获取:request.getServletContext()/this.getServletContext(). 功能: 获取MIME类型: *MIME类型:在互联网通信过程中定义的一种文件数据类型. 格式: 大类型/小类型 如text/html image/jpeg 域对象,共享数据: *作用范围广,整个web工程. 获取文件的真实路径: *通过Context.getrealPath(String s)来获取文件真实路径,其中,参数代表web根目录下的资源路径,如果资源路径再某个文件夹下,则应在加上对应的(/文件夹名称/资源名称). ★特别注意,资源路径如果在src下,因为src下的文件通过编译过后最后会在/WEB-INFO/classes下,所以在获取src下资源的真实路径时,应该写成(/WEB-INFO/classes/资源名称). Context.getrealPath(String s)本质上,是在做字符串的拼接,web根目录拼接上参数中的字符串.]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Servlet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Response对象笔记]]></title>
     <url>%2F2019%2F07%2F19%2F%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[Response重定向的方法,和路径填写. 注意,转发因为实在服务器内部发生资源跳转,所以不需要写绝对路径,相对路径即可.Response字符输出流,注意设置编码格式防止中文乱码,获取流的默认格式是ISO-8859-1的 注意,再获取流对象之前,设置编码,而不是再之后设置编码.Response字节输出流,设置编码格式,防止中文乱码,同字符输出流相同,只不过字节流可以输出更多东西.]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Servlet</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Response]]></title>
     <url>%2F2019%2F07%2F18%2FResponse%2F</url>
     <content type="text"><![CDATA[响应消息: 格式:响应行,响应头,响应空行,响应体. 响应行: 协议/版本,状态码 状态码:服务器告诉客户端浏览器本次请求和响应的状态. *分类: 第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码. 第二类:2xx,成功! 第三类:3xx,重定向,302代表资源跳转,304,缓存. 第四类:4xx,客户端错误.404代表请求路径没有对应的资源.,405代表请求方式没有对应的doxxx方法. 第五类:5xx,服务器错误.500代表服务器内部出现异常. 响应头: 格式:头名称 值 常见的响应头: Content-type:页面编码格式. Content-Length:字节数. Content-disposition: 服务器告诉客户端以什么格式打开响应体.默认值in-line:在当前页面打开. attachment:以附件形式打开,文件下载. Response设置响应消息: 设置响应行: 设置状态码:setStatus(int i). 设置响应头: setHeader(String name,String values)/(&quot;location&quot;,&quot;资源路径&quot;).这是重定向方法.需要加虚拟路径. 还有一种方法,Response.sendRidrect(&quot;资源路径&quot;).需要加虚拟路径. ★:重定向特点:两次请求,两次响应,不是内部跳转,而是服务器两次请求跳转.地址栏改变. 可以访问服务器外资源. 重定向不能使用request对象的共享数据. 设置相应体: 通过流,首先要获取流, 获取输出流, ★注意!解决乱码:response.setConentType(&quot;text/html;charset=utf-8&quot;); 第一种,字符流:Printer getWriter().不是实时打印.是一次响应完成后打印. 第二种,字节流:ServletOutputStream getOutputStream().]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>Servlet</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别]]></title>
