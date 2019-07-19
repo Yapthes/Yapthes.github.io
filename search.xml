@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Response对象笔记]]></title>
+    <url>%2F2019%2F07%2F19%2F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Response重定向的方法,和路径填写. 注意,转发因为实在服务器内部发生资源跳转,所以不需要写绝对路径,相对路径即可.Response字符输出流,注意设置编码格式防止中文乱码,获取流的默认格式是ISO-8859-1的 注意,再获取流对象之前,设置编码,而不是再之后设置编码.Response字节输出流,设置编码格式,防止中文乱码,同字符输出流相同,只不过字节流可以输出更多东西.]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Response]]></title>
     <url>%2F2019%2F07%2F18%2FResponse%2F</url>
     <content type="text"><![CDATA[响应消息: 格式:响应行,响应头,响应空行,响应体. 响应行: 协议/版本,状态码 状态码:服务器告诉客户端浏览器本次请求和响应的状态. *分类: 第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码. 第二类:2xx,成功! 第三类:3xx,重定向,302代表资源跳转,304,缓存. 第四类:4xx,客户端错误.404代表请求路径没有对应的资源.,405代表请求方式没有对应的doxxx方法. 第五类:5xx,服务器错误.500代表服务器内部出现异常. 响应头: 格式:头名称 值 常见的响应头: Content-type:页面编码格式. Content-Length:字节数. Content-disposition: 服务器告诉客户端以什么格式打开响应体.默认值in-line:在当前页面打开. attachment:以附件形式打开,文件下载. Response设置响应消息: 设置响应行: 设置状态码:setStatus(int i). 设置响应头: setHeader(String name,String values)/(&quot;location&quot;,&quot;资源路径&quot;).这是重定向方法.需要加虚拟路径. 还有一种方法,Response.sendRidrect(&quot;资源路径&quot;).需要加虚拟路径. ★:重定向特点:两次请求,两次响应,不是内部跳转,而是服务器两次请求跳转.地址栏改变. 可以访问服务器外资源. 重定向不能使用request对象的共享数据. 设置相应体: 通过流,首先要获取流, 获取输出流, ★注意!解决乱码:response.setConentType(&quot;text/html;charset=utf-8&quot;); 第一种,字符流:Printer getWriter().不是实时打印.是一次响应完成后打印. 第二种,字节流:ServletOutputStream getOutputStream().]]></content>
