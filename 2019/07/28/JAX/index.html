@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Servlet,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -77,21 +77,17 @@
 
 
 
-<meta name="description" content="Servlet 本身是一个接口,里面包含了init,servi,destroy,getservletinfo,getservletconfig等方法,程序员需要去定义一个类,用来实现这个接口,重写里面的方法,来实现客户端的访问请求    原理:客户端发送url请求,服务器(Tomcat)接收请求以后,实例化Servlet对象(与此同时,会产生一个包含请求数据信息的Request对象),通过配置信息">
-<meta name="keywords" content="Servlet">
+<meta name="description" content="AJAX：    1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML        1. 异步和同步：客户端和服务器端相互通信的基础上            * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。            * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Servlet体系结构">
-<meta property="og:url" content="http://yoursite.com/2019/07/15/ervlet-HTTP-Request/index.html">
+<meta property="og:title" content="AJAX&amp;JSON">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/JAX/index.html">
 <meta property="og:site_name" content="My_Blog">
-<meta property="og:description" content="Servlet 本身是一个接口,里面包含了init,servi,destroy,getservletinfo,getservletconfig等方法,程序员需要去定义一个类,用来实现这个接口,重写里面的方法,来实现客户端的访问请求    原理:客户端发送url请求,服务器(Tomcat)接收请求以后,实例化Servlet对象(与此同时,会产生一个包含请求数据信息的Request对象),通过配置信息">
+<meta property="og:description" content="AJAX：    1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML        1. 异步和同步：客户端和服务器端相互通信的基础上            * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。            * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/pasted-9.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-10.png">
-<meta property="og:updated_time" content="2019-07-15T05:06:00.142Z">
+<meta property="og:updated_time" content="2019-07-28T08:56:42.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Servlet体系结构">
-<meta name="twitter:description" content="Servlet 本身是一个接口,里面包含了init,servi,destroy,getservletinfo,getservletconfig等方法,程序员需要去定义一个类,用来实现这个接口,重写里面的方法,来实现客户端的访问请求    原理:客户端发送url请求,服务器(Tomcat)接收请求以后,实例化Servlet对象(与此同时,会产生一个包含请求数据信息的Request对象),通过配置信息">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-9.png">
+<meta name="twitter:title" content="AJAX&amp;JSON">
+<meta name="twitter:description" content="AJAX：    1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML        1. 异步和同步：客户端和服务器端相互通信的基础上            * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。            * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其">
 
 
 
@@ -121,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/15/ervlet-HTTP-Request/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/28/JAX/">
 
 
 
 
 
-  <title>Servlet体系结构 | My_Blog</title>
+  <title>AJAX&JSON | My_Blog</title>
   
 
 
@@ -296,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/ervlet-HTTP-Request/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/JAX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="昊昊">
@@ -313,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Servlet体系结构</h1>
+          <h1 class="post-title" itemprop="name headline">AJAX&JSON</h1>
         
 
         <div class="post-meta">
@@ -325,8 +321,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-15T10:10:00+08:00">
-                2019-07-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-28T15:19:30+08:00">
+                2019-07-28
               </time>
             
 
@@ -335,28 +331,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaEE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaEE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -416,18 +390,169 @@
       
 
       
-        <p>Servlet</p>
-<p>本身是一个接口,里面包含了init,servi,destroy,getservletinfo,getservletconfig等方法,程序员需要去定义一个类,用来实现这个接口,重写里面的方法,来实现客户端的访问请求</p>
-<p>   原理:客户端发送url请求,服务器(Tomcat)接收请求以后,实例化Servlet对象(与此同时,会产生一个包含请求数据信息的Request对象),通过配置信息web.xml或者JDK6以上可以使用注解配置servlet中的url-patten,来寻找对应的serlvet,找到对应的servlet后,通过反射找到对应的实现类,然后去执行类中的service方法(Requset,Response),此时会产生Response对象,将处理过后包含请求的数据信息,响应给客户.<a id="more"></a><br> GenericServlet  </p>
-<p>   实现了Servlet接口的一个抽象类,里面重写了Servlet中的方法.其中,除了service(Requset,Response)方法是抽象方法外,其余的方法都是public,该类主要目的是为了减少代码,避免代码冗余,一开始程序员需要实现Servlet接口,必须重写其中的方法,但是借助中间类GenericServlet,该类实现了Servlet接口,重写了其中的方法,程序员只用继承该类,实现其中的service方法即可,这样一来,更方便,减少代码量,增加工作效率,用到那个方法,便去重写那个方法.</p>
-<p> HttpServlet</p>
-<p>   该抽象类,继承了GenericServlet这个类,其中有两个service方法.一个protect的service方<br>    法,其中,两个方法需要的参数对象不同,但在public的service方法中,进行了向下转型,因为HttpServlet继承自GenericServlet,而GenericServlet又实现了Servlet接口,所以Servlet也是<br>    HttpServlet的爷爷类,public方法中,把Servlet的Requst和Response对象,通过向下转型,强<br>    转为HttpServlet的Requset和Response对象,然后再该方法中,调用本类中的protect的<br>    service方法,</p>
-<p><img src="/images/pasted-9.png" alt></p>
-<pre><code>如下方法.</code></pre><p><img src="/images/pasted-10.png" alt></p>
-<p>该方法中,封装了对请求信息的判断,判断其是get/post请求,然后根据判断结果.执行对应的doget和dopost方法,这样就不用再每一次都进行判断,而程序员只用写一个类,继承自HttpServlet,然后去重写其中的doget或者dopost方法,当服务器收到每次请求的时候,会自动去找父类GenericServlet中的public service方法,然后通过强转,执行protect service方法,然后通过方法中的判断去执行doget或者dopost方法,又因为程序员写的类继承了该类,重写了doget或者dopost方法,所以其实执行的是子类中的doget或dopost方法,这样就完成了想返回的响应请求和实现请求响应的过程…</p>
-<p>特别注意!!!</p>
-<p>当继承HttpServlet的子类中,如果重写了service方法,得看方法得参数,如果为ServletRequest和ServletResponse,那么服务器再收到请求以后,便不会去父类中,执行父类中的强转得service方法,而是直接执行子类中重写的该方法,然后执行该子类中service中对应得操作…<br>    那么如果子类中,重写了参数为HttpRequest和Httpresponse得service方法,那么服务器在接收到请求以后,会先去父类中执行向下转型得service方法,然后再到子类中,执行该方法,接着执行该方法中对应得操作.</p>
+        <p>AJAX：<br>    1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML<br>        1. 异步和同步：客户端和服务器端相互通信的基础上<br>            * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。<br>            * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</p>
+<pre><code>        Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] 
+        通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+        传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。
 
+        提升用户的体验
+
+2. 实现方式：
+    1. 原生的JS实现方式（了解）
+                 //1.创建核心对象
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+                }
+
+                //2. 建立连接
+                /*
+                    参数：
+                        1. 请求方式：GET、POST
+                            * get方式，请求参数在URL后边拼接。send方法为空参
+                            * post方式，请求参数在send方法中定义
+                        2. 请求的URL：
+                        3. 同步或异步请求：true（异步）或 false（同步）
+
+                 */
+                xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username=tom&quot;,true);
+
+                //3.发送请求
+                xmlhttp.send();
+
+                //4.接受并处理来自服务器的响应结果
+                //获取方式 ：xmlhttp.responseText
+                //什么时候获取？当服务器响应成功后再获取
+
+                //当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。
+                xmlhttp.onreadystatechange=function()
+                {
+                    //判断readyState就绪状态是否为4，判断status响应状态码是否为200
+                    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+                    {
+                       //获取服务器的响应结果
+                        var responseText = xmlhttp.responseText;
+                        alert(responseText);
+                    }
+                }
+    2. JQeury实现方式
+        1. $.ajax()
+            * 语法：$.ajax({键值对});
+             //使用$.ajax()发送异步请求
+                $.ajax({
+                    url:&quot;ajaxServlet1111&quot; , // 请求路径
+                    type:&quot;POST&quot; , //请求方式
+                    //data: &quot;username=jack&amp;age=23&quot;,//请求参数
+                    data:{&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23},
+                    success:function (data) {
+                        alert(data);
+                    },//响应成功后的回调函数
+                    error:function () {
+                        alert(&quot;出错啦...&quot;)
+                    },//表示如果请求响应出现错误，会执行的回调函数
+
+                    dataType:&quot;text&quot;//设置接受到的响应数据的格式
+                });
+        2. $.get()：发送get请求
+            * 语法：$.get(url, [data], [callback], [type])
+                * 参数：
+                    * url：请求路径
+                    * data：请求参数
+                    * callback：回调函数
+                    * type：响应结果的类型
+
+        3. $.post()：发送post请求
+            * 语法：$.post(url, [data], [callback], [type])
+                * 参数：
+                    * url：请求路径
+                    * data：请求参数
+                    * callback：回调函数
+                    * type：响应结果的类型</code></pre><p>   JSON：<br>    1. 概念： JavaScript Object Notation        JavaScript对象表示法<br>        Person p = new Person();<br>        p.setName(“张三”);<br>        p.setAge(23);<br>        p.setGender(“男”);</p>
+<pre><code>    var p = {&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;};
+
+    * json现在多用于存储和交换文本信息的语法
+    * 进行数据的传输
+    * JSON 比 XML 更小、更快，更易解析。
+
+2. 语法：
+    1. 基本规则
+        * 数据在名称/值对中：json数据是由键值对构成的
+            * 键用引号(单双都行)引起来，也可以不使用引号
+            * 值得取值类型：
+                1. 数字（整数或浮点数）
+                2. 字符串（在双引号中）
+                3. 逻辑值（true 或 false）
+                4. 数组（在方括号中）    {&quot;persons&quot;:[{},{}]}
+                5. 对象（在花括号中） {&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}
+                6. null
+        * 数据由逗号分隔：多个键值对由逗号分隔
+        * 花括号保存对象：使用{}定义json 格式
+        * 方括号保存数组：[]
+    2. 获取数据:
+        1. json对象.键名
+        2. json对象[&quot;键名&quot;]
+        3. 数组对象[索引]
+        4. 遍历
+                 //1.定义基本格式
+                var person = {&quot;name&quot;: &quot;张三&quot;, age: 23, &apos;gender&apos;: true};
+
+                var ps = [{&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true},
+                    {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true},
+                    {&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false}];
+
+                //获取person对象中所有的键和值
+                //for in 循环
+               /* for(var key in person){
+                    //这样的方式获取不行。因为相当于  person.&quot;name&quot;
+                    //alert(key + &quot;:&quot; + person.key);
+                    alert(key+&quot;:&quot;+person[key]);
+                }*/
+
+               //获取ps中的所有值
+                for (var i = 0; i &lt; ps.length; i++) {
+                    var p = ps[i];
+                    for(var key in p){
+                        alert(key+&quot;:&quot;+p[key]);
+                    }
+                }
+
+
+3. JSON数据和Java对象的相互转换
+
+    * JSON解析器：
+        * 常见的解析器：Jsonlib，Gson，fastjson，jackson
+
+    1. JSON转为Java对象
+        1. 导入jackson的相关jar包
+        2. 创建Jackson核心对象 ObjectMapper
+        3. 调用ObjectMapper的相关方法进行转换
+            1. readValue(json字符串数据,Class)
+    2. Java对象转换JSON
+        1. 使用步骤：
+            1. 导入jackson的相关jar包
+            2. 创建Jackson核心对象 ObjectMapper
+            3. 调用ObjectMapper的相关方法进行转换
+                1. 转换方法：
+                    * writeValue(参数1，obj):
+                        参数1：
+                            File：将obj对象转换为JSON字符串，并保存到指定的文件中
+                            Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中
+                            OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中
+                            * writeValueAsString(obj):将对象转为json字符串
+
+                2. 注解：
+                    1. @JsonIgnore：排除属性。
+                    2. @JsonFormat：属性值得格式化
+                         * @JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)
+
+                3. 复杂java对象转换
+                    1. List：数组
+                    2. Map：对象格式一致</code></pre>
       
     </div>
     
@@ -442,12 +567,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
-          
-        </div>
-      
 
       
       
@@ -457,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/15/ervlet注解配置/" rel="next" title="Servlet注解配置&HTTP">
-                <i class="fa fa-chevron-left"></i> Servlet注解配置&HTTP
+              <a href="/2019/07/20/ookie/" rel="next" title="Cookie">
+                <i class="fa fa-chevron-left"></i> Cookie
               </a>
             
           </div>
@@ -466,10 +585,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/17/ervlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别/" rel="prev" title="Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别">
-                Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
