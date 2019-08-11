@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Spring创建数据源]]></title>
+    <url>%2F2019%2F08%2F11%2Fpring%E6%95%B0%E6%8D%AE%E6%BA%90%2F</url>
+    <content type="text"><![CDATA[数据源开发步骤. 1.导入驱动坐标.2.导入连接池坐标.3.测试(c3p0)控制台打印. 测试(druid) 以上因为.手动设置数据库连接池中字符串会经常改变.所以应该通过加载配置文件的方式来创建连接池对象c3p0druidSpring创建数据源. 首先.创建环境.导入spring坐标,创建spring配置文件. 配置文件中.之前要创建数据库连接池对象.这里可以使用spring容器为我们创建.创建以后.设置参数,可以依靠spring的注入来设置.需要注意的是配置文件xml中.特殊符号需要转意.如&amp;需要转意为&amp;之后在测试.在我们使用spring配置文件,来帮我们创建数据源的时候,配置文件xml中,注入需要写入大量字符串.我们也可以采用加载配置文件的方法.来直接获取配置文件中的键值.需要再spring配置文件中添加命名空间然后,再注入时,可以采用像el,jstl再jsp页面中那样这里.特别注意.在获取用户名的值的时候.${username}会被解析成对应的电脑名.这样在测试中.相当于是电脑名再访问数据库,而数据库中没有这个用户,所以会报错,所以我们可以修改配置文件中的username再前面加上对应的数据源.如：${c3p0.username};]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring]]></title>
     <url>%2F2019%2F08%2F09%2Fpring%2F</url>
     <content type="text"><![CDATA[Spring是分层的Java EE/SE应用full-stack轻量级开源框架,以IOC和AOP为内核. Spring的优势: 1.方便解耦,简化开发. 2.AOP编程的支持. 3.声明事务的支持. 4.方便程序的设计. 5.方便各种框架的集成. 6.降低JavaEE API的使用难度. 7.开源代码学习思想.Spring当中创建对象的四种方式. 1.无参构造的方式. 2.静态工厂的方式. 配置文件配置静态工厂的bean标签中.id为需求获取对象的标识,在以后通过上下文对象.getBean(id).就会通过该id,去找到静态工厂类,发现其中的静态方法,该方法返回一个需求的对象. 3.实例工厂的方式. 4.有参构造的方式.Spring当中创建对象的范围 其中prototype是多例,创建出来的对象,有不同的地址,为不同的对象. singleton是单例的,创建出来的对象是同一个,其中配置默认的是singleton.Spring当中的依赖注入. 常用的通过JavaBean中的set方法,用set注入的方式 配置set注入的时候,id和class不做解释,一个是唯一标识,一个是全类名,property标签,代表其中的属性,name代表属性名,并不是成员变量,而是类属性,是set方法后的字段名首字母小写,ref代表注入对象的类型是对象,是一个引用类型,如果注入的是普通类型的话,就用value来代替ref. 通过有参构造的方式,注入. 配置有参注入的时候,id和class不做解释,一个是唯一标识,一个是全类名,需要注意的是因为是有参构造,所以需要constructor-arg标签,其中name代表的是参数的名字,ref代表了参数需求的类型是一个引用类型,标签中的name属性可以改为index,代表了有参构造中的第几个参数. ApplicationContext配置文件中的import标签. 如果再以后,进行大项目的开发当中,配置文件中的配置信息会很多,维护起来会很麻烦,而且不方便阅读,所以采用了import导入其他配置文件的方法,这样配置文件方便阅读,维护起来也方便维护. Spring当中普通类型的注入方式.]]></content>

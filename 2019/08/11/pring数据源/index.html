@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Servlet,">
+  <meta name="keywords" content="Spring,">
 
 
 
@@ -77,18 +77,33 @@
 
 
 
-<meta name="description" content="响应消息: 格式:响应行,响应头,响应空行,响应体.      响应行:           协议/版本,状态码           状态码:服务器告诉客户端浏览器本次请求和响应的状态.                   *分类:                         第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.">
-<meta name="keywords" content="Servlet">
+<meta name="description" content="数据源开发步骤. 1.导入驱动坐标.2.导入连接池坐标.3.测试(c3p0)控制台打印.">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Response">
-<meta property="og:url" content="http://yoursite.com/2019/07/18/Response/index.html">
+<meta property="og:title" content="Spring创建数据源">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/pring数据源/index.html">
 <meta property="og:site_name" content="My_Blog">
-<meta property="og:description" content="响应消息: 格式:响应行,响应头,响应空行,响应体.      响应行:           协议/版本,状态码           状态码:服务器告诉客户端浏览器本次请求和响应的状态.                   *分类:                         第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.">
+<meta property="og:description" content="数据源开发步骤. 1.导入驱动坐标.2.导入连接池坐标.3.测试(c3p0)控制台打印.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-19T14:57:36.965Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-44.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-45.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-46.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-47.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-48.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-49.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-50.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-51.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-55.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-53.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-54.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-56.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-57.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-58.png">
+<meta property="og:updated_time" content="2019-08-11T04:06:02.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Response">
-<meta name="twitter:description" content="响应消息: 格式:响应行,响应头,响应空行,响应体.      响应行:           协议/版本,状态码           状态码:服务器告诉客户端浏览器本次请求和响应的状态.                   *分类:                         第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.">
+<meta name="twitter:title" content="Spring创建数据源">
+<meta name="twitter:description" content="数据源开发步骤. 1.导入驱动坐标.2.导入连接池坐标.3.测试(c3p0)控制台打印.">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-44.png">
 
 
 
@@ -118,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/18/Response/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/11/pring数据源/">
 
 
 
 
 
-  <title>Response | My_Blog</title>
+  <title>Spring创建数据源 | My_Blog</title>
   
 
 
@@ -293,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/18/Response/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/pring数据源/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="昊昊">
@@ -310,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Response</h1>
+          <h1 class="post-title" itemprop="name headline">Spring创建数据源</h1>
         
 
         <div class="post-meta">
@@ -322,8 +337,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-18T09:13:00+08:00">
-                2019-07-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-11T10:29:00+08:00">
+                2019-08-11
               </time>
             
 
@@ -345,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaEE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaEE</span>
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
                   </a>
                 </span>
 
@@ -413,40 +428,15 @@
       
 
       
-        <p>响应消息:</p>
-<pre><code>格式:响应行,响应头,响应空行,响应体.
-     响应行:
-          协议/版本,状态码
-          状态码:服务器告诉客户端浏览器本次请求和响应的状态.
-                  *分类:
-                        第一类:1xx,服务器接收客户端消息,但没有接受完成,等待一段时间后,发送1xx状态码.
-                        第二类:2xx,成功!
-                        第三类:3xx,重定向,302代表资源跳转,304,缓存.
-                        第四类:4xx,客户端错误.404代表请求路径没有对应的资源.,405代表请求方式没有对应的doxxx方法.
-                        第五类:5xx,服务器错误.500代表服务器内部出现异常.</code></pre><a id="more"></a>
+        <p>数据源开发步骤.</p>
+<p>1.导入驱动坐标.<br><img src="/images/pasted-44.png" alt="upload successful"><br>2.导入连接池坐标.<br><img src="/images/pasted-45.png" alt="upload successful"><br>3.测试(c3p0)<br><img src="/images/pasted-46.png" alt="upload successful"><br>控制台打印.<br><img src="/images/pasted-47.png" alt="upload successful"></p>
+<a id="more"></a>
 
-<pre><code>响应头:
-        格式:头名称 值
-             常见的响应头:
-                 Content-type:页面编码格式.
-                 Content-Length:字节数.
-                 Content-disposition:
-                 服务器告诉客户端以什么格式打开响应体.默认值in-line:在当前页面打开.
-                 attachment:以附件形式打开,文件下载.</code></pre><p> Response设置响应消息:</p>
-<pre><code>设置响应行:
-    设置状态码:setStatus(int i).
-设置响应头:
-    setHeader(String name,String values)/(&quot;location&quot;,&quot;资源路径&quot;).这是重定向方法.需要加虚拟路径.
-    还有一种方法,Response.sendRidrect(&quot;资源路径&quot;).需要加虚拟路径.
-    ★:重定向特点:两次请求,两次响应,不是内部跳转,而是服务器两次请求跳转.地址栏改变.
-    可以访问服务器外资源.
-    重定向不能使用request对象的共享数据.
-设置相应体:
-    通过流,首先要获取流,
-    获取输出流,
-    ★注意!解决乱码:response.setConentType(&quot;text/html;charset=utf-8&quot;);
-    第一种,字符流:Printer getWriter().不是实时打印.是一次响应完成后打印.
-    第二种,字节流:ServletOutputStream getOutputStream().</code></pre>
+<p>测试(druid)<br><img src="/images/pasted-48.png" alt="upload successful"></p>
+<p>以上因为.手动设置数据库连接池中字符串会经常改变.所以应该通过加载配置文件的方式来创建连接池对象<br>c3p0<br><img src="/images/pasted-49.png" alt="upload successful"><br>druid<br><img src="/images/pasted-50.png" alt="upload successful"><br>Spring创建数据源.</p>
+<pre><code>首先.创建环境.导入spring坐标,创建spring配置文件.
+配置文件中.之前要创建数据库连接池对象.这里可以使用spring容器为我们创建.创建以后.设置参数,可以依靠spring的注入来设置.</code></pre><p><img src="/images/pasted-51.png" alt="upload successful"><br><img src="/images/pasted-55.png" alt="upload successful"><br>需要注意的是配置文件xml中.特殊符号需要转意.如&amp;需要转意为&amp;<br><img src="/images/pasted-53.png" alt="upload successful"><br>之后在测试.<br><img src="/images/pasted-54.png" alt="upload successful"><br><img src="/images/pasted-56.png" alt="upload successful"><br>在我们使用spring配置文件,来帮我们创建数据源的时候,配置文件xml中,注入需要写入大量字符串.我们也可以采用加载配置文件的方法.来直接获取配置文件中的键值.<br>需要再spring配置文件中添加命名空间<br><img src="/images/pasted-57.png" alt="upload successful"><br>然后,再注入时,可以采用像el,jstl再jsp页面中那样<br><img src="/images/pasted-58.png" alt="upload successful"><br>这里.特别注意.在获取用户名的值的时候.${username}会被解析成对应的电脑名.这样在测试中.相当于是电脑名再访问数据库,而数据库中没有这个用户,所以会报错,所以我们可以修改配置文件中的username再前面加上对应的数据源.如：${c3p0.username};</p>
+
       
     </div>
     
@@ -463,7 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
           
         </div>
       
@@ -476,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/ervlet、HttpServlet、ServletRequest、HttpServletRequest、Request的联系和区别/" rel="next" title="Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别">
-                <i class="fa fa-chevron-left"></i> Servlet、HttpServlet、ServletRequest、HttpServletRequest/Response的联系和区别
+              <a href="/2019/08/09/pring/" rel="next" title="Spring">
+                <i class="fa fa-chevron-left"></i> Spring
               </a>
             
           </div>
@@ -485,10 +475,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/19/记/" rel="prev" title="Response对象笔记">
-                Response对象笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
