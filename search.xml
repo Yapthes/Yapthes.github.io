@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue]]></title>
+    <url>%2F2019%2F08%2F24%2Fue-0%2F</url>
+    <content type="text"><![CDATA[嗡嗡嗡]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Mybatis进阶]]></title>
     <url>%2F2019%2F08%2F22%2FMybatis-Dao%2F</url>
     <content type="text"><![CDATA[Mybatis接口动态代理. 需要满足以下规范. 然后使用API来操作,使用 来获得接口的代理对象.接下来就相当于操作接口实现类.Mybatis动态sql. 我们再SQL查询中,SQL语句以前是固定了写死的,条件明确,但是再将来业务中,我们需要查询的条件不是明确的,这个时候我们就需要动态SQL来帮我们处理. if foreach sql语句的抽取 使用 类型转换器 1,创建处理器类 覆写其中的方法. 在核心配置文件中配置类型处理器 多表查询. 首先需要明确表与表之间的关系,然后进行查询. 在查询过程中,因为表与表之间的关系,需要进行配置 封装集合类型. 总结]]></content>
