@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mybatis进阶]]></title>
+    <url>%2F2019%2F08%2F22%2FMybatis-Dao%2F</url>
+    <content type="text"><![CDATA[Mybatis接口动态代理. 需要满足以下规范. 然后使用API来操作,使用 来获得接口的代理对象.接下来就相当于操作接口实现类.Mybatis动态sql. 我们再SQL查询中,SQL语句以前是固定了写死的,条件明确,但是再将来业务中,我们需要查询的条件不是明确的,这个时候我们就需要动态SQL来帮我们处理. if foreach sql语句的抽取 使用 类型转换器 1,创建处理器类 覆写其中的方法. 在核心配置文件中配置类型处理器 多表查询. 首先需要明确表与表之间的关系,然后进行查询. 在查询过程中,因为表与表之间的关系,需要进行配置 封装集合类型. 总结]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mybatis快速入门]]></title>
+    <url>%2F2019%2F08%2F20%2FUntitled%2F</url>
+    <content type="text"><![CDATA[1.导入坐标.2.创建实体类. 3.创建配置文件. 至少需要两个配置文件 1.mybatis核心配置文件 其中标签 可以起别名,可通过获取包下,或者指定实体类.之后可以在配置映射文件中使用. 2.映射配置文件. 其中,如果查询要求中需要参数,则需要加上参数类型.3.测试]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring_MVC文件上传&拦截器&异常处理]]></title>
     <url>%2F2019%2F08%2F18%2Fring-MVC%E8%AF%B7%E6%B1%82%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%2F</url>
     <content type="text"><![CDATA[文件上传 1.文件上传客户端三要素. 表单项:type=file. 表单提交方式:post. enctype属性为multipart/form-data 2.服务器. 导入fileupload和io坐标 配置文件上传解析器. 代码写入. 拦截器(interceptor) 拦截器和过滤器的区别. 1.实现对应的接口.HandlerInterceptor. 2.编写需要覆写的方法. 3.在配置文件中配置拦截器. 4.测试 异常处理 在SpringMVC中,框架为我们准备好了异常处理,在发生异常的时候,只需要我们在配置文件中进行配置. 方法一: SpringMVC自带了异常处理.在配置文件中,进行如下配置. 方法二: 编写一个异常处理类,实现对应的异常处理接口,在自定义异常处理器中,处理抛出的异常. 接下来,自定义异常处理编写好了,还需要在配置文件中声明定义的自定义异常处理类.]]></content>
@@ -41,7 +63,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Spring创建数据源]]></title>
+    <title><![CDATA[Spring创建数据源_转义符]]></title>
     <url>%2F2019%2F08%2F11%2Fpring%E6%95%B0%E6%8D%AE%E6%BA%90%2F</url>
     <content type="text"><![CDATA[数据源开发步骤. 1.导入驱动坐标.2.导入连接池坐标.3.测试(c3p0)控制台打印. 测试(druid) 以上因为.手动设置数据库连接池中字符串会经常改变.所以应该通过加载配置文件的方式来创建连接池对象c3p0druidSpring创建数据源. 首先.创建环境.导入spring坐标,创建spring配置文件. 配置文件中.之前要创建数据库连接池对象.这里可以使用spring容器为我们创建.创建以后.设置参数,可以依靠spring的注入来设置.需要注意的是配置文件xml中.特殊符号需要转意.如&amp;需要转意为&amp;之后在测试.在我们使用spring配置文件,来帮我们创建数据源的时候,配置文件xml中,注入需要写入大量字符串.我们也可以采用加载配置文件的方法.来直接获取配置文件中的键值.需要再spring配置文件中添加命名空间然后,再注入时,可以采用像el,jstl再jsp页面中那样这里.特别注意.在获取用户名的值的时候.${username}会被解析成对应的电脑名.这样在测试中.相当于是电脑名再访问数据库,而数据库中没有这个用户,所以会报错,所以我们可以修改配置文件中的username再前面加上对应的数据源.如：${c3p0.username};]]></content>
       <categories>
